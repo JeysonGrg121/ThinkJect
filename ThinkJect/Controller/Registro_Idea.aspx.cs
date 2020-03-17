@@ -51,9 +51,9 @@ public partial class View_Registro_Idea : System.Web.UI.Page
         val = idea.Insertar(registro);
 
         cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Solicitud enviada, Por Favor revise el correo los proximos dias.');</script>");
-        limpar();
+        //limpar();
     }
-
+    /*
     private void limpar()
     {
         Tb_asociacion.Text = "";
@@ -63,5 +63,5 @@ public partial class View_Registro_Idea : System.Web.UI.Page
         Tb_nombreIdea.Text = "";
         Tb_tiempo.Text = "";
     }
-
+    */
 }
