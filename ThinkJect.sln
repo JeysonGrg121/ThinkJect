@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1062
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ThinkJect", "ThinkJect\", "{E13F3A82-FE4B-4063-8ECF-C0ED03D5C026}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50775"
+		Debug.AspNetCompiler.PhysicalPath = "ThinkJect\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50775\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50775"
+		Release.AspNetCompiler.PhysicalPath = "ThinkJect\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50775\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50775"
+		SlnRelativePath = "ThinkJect\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E13F3A82-FE4B-4063-8ECF-C0ED03D5C026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E13F3A82-FE4B-4063-8ECF-C0ED03D5C026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B26D47B1-4473-4C67-92BD-3E79487D1B5B}
+	EndGlobalSection
+EndGlobal
