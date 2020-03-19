@@ -73,4 +73,32 @@ public class DAO
         }
         return insertar;
     }
+
+    //obtener proyectos pendientes en area administrado
+    public DataTable obtenerproyectos()
+    {
+        DataTable obtenercategoria = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["Postgres"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("proyecto.f_obtener_proyecto_pendientes", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            conection.Open();
+            dataAdapter.Fill(obtenercategoria);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return obtenercategoria;
+    }
 }
