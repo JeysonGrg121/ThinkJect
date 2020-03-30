@@ -197,4 +197,35 @@ public class DAO
         }
         return validar;
     }
+
+    //funcion login
+    public DataTable login(E_login log)
+    {
+        DataTable validacion = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["Postgres"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("usuarios.f_usuarios", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_usuario", NpgsqlDbType.Text).Value = log.User;
+            dataAdapter.SelectCommand.Parameters.Add("_clave", NpgsqlDbType.Text).Value = log.Clave;
+
+            conection.Open();
+            dataAdapter.Fill(validacion);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return validacion;
+    }
+
 }

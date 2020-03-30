@@ -12,7 +12,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        Bienvenido ---Administrador<br />
+        Bienvenido ---Administrador<asp:LinkButton ID="LKB_cerrar" runat="server" OnClick="LKB_cerrar_Click">SALIR</asp:LinkButton>
+        <br />
         <asp:Button ID="Bt_proyectos" runat="server" OnClick="Bt_proyectos_Click" Text="Proyectos pendeintes" />
         </div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
