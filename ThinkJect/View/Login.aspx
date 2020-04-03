@@ -47,6 +47,11 @@
             transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
             margin-left: 73;
         }
+        .auto-style5 {
+            font-size: large;
+            color: #FF3300;
+            background-color: #FFFFFF;
+        }
     </style>
 </head>
 <body>
@@ -75,6 +80,9 @@
              <%--Boton iniciar--%>
             <div class="form-group" >
                 <asp:Button ID="Bt_ingresar" runat="server" Text="Iniciar" OnClick="Iniciar_Click" CssClass="form-control btn btn-primary"/>
+                <h2>
+                    <asp:Label ID="Lb_error" runat="server" CssClass="auto-style5" Text="Label" Visible="False"></asp:Label>
+                </h2>
             </div>
        
     </form>

@@ -23,7 +23,7 @@ public partial class View_Login : System.Web.UI.Page
         DataTable inico;
         inico = log.login(login);
 
-        if (int.Parse(inico.Rows[0]["id"].ToString()) > 0)
+        if (inico.Rows.Count > 0) //if (int.Parse(inico.Rows[0]["id"].ToString()) > 0)
         {
             Session["id"] = inico.Rows[0]["id"].ToString();
             Session["nombre"] = inico.Rows[0]["nombre_usuario"].ToString();
@@ -45,7 +45,9 @@ public partial class View_Login : System.Web.UI.Page
         }
         else
         {
-            Session["id"] = null;
+            Lb_error.Visible = true;
+            Lb_error.Text = "error en los datos";
+            //Session["id"] = null;
         }
     }
 }

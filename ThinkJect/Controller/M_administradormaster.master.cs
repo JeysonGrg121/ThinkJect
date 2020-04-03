@@ -29,7 +29,7 @@ public partial class View_M_administradormaster : System.Web.UI.MasterPage
 
     protected void Bt_proyectos_Click(object sender, EventArgs e)
     {
-        //accion del boton para rediriguir a formulario de proyectos a publicar.
+        //accion del boton para redirigir a formulario de proyectos a publicar.
         Response.Redirect("Proyecto_pendiente.aspx");
     }
 
