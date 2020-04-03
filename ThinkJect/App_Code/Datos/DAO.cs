@@ -57,6 +57,7 @@ public class DAO
             dataAdapter.SelectCommand.Parameters.Add("_correo", NpgsqlDbType.Text).Value = idea.Correo;
             dataAdapter.SelectCommand.Parameters.Add("_tiempo", NpgsqlDbType.Text).Value = idea.Tiempo;
             dataAdapter.SelectCommand.Parameters.Add("_image", NpgsqlDbType.Text).Value = idea.Image;
+            dataAdapter.SelectCommand.Parameters.Add("_user", NpgsqlDbType.Integer).Value = idea.User_id;
             conection.Open();
             dataAdapter.Fill(insertar);
         }

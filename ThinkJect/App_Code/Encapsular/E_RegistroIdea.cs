@@ -22,6 +22,7 @@ public class E_RegistroIdea
     private double meta;
     private string correo;
     private string tiempo;
+    private int user_id;
 
     public string Nombre { get => nombre; set => nombre = value; }
     public string Descripcion { get => descripcion; set => descripcion = value; }
@@ -31,4 +32,5 @@ public class E_RegistroIdea
     public double Meta { get => meta; set => meta = value; }
     public string Correo { get => correo; set => correo = value; }
     public string Tiempo { get => tiempo; set => tiempo = value; }
+    public int User_id { get => user_id; set => user_id = value; }
 }

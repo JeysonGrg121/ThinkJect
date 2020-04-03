@@ -46,6 +46,7 @@ public partial class View_Registro_Idea : System.Web.UI.Page
             FU_foto.SaveAs(MapPath("~\\Imagenes\\Proyecto\\" + FU_foto.FileName));
         }
         registro.Image = saveLocation;
+        registro.User_id = int.Parse(Session["id"].ToString());
         DAO idea = new DAO();
         DataTable val;
         val = idea.Insertar(registro);
