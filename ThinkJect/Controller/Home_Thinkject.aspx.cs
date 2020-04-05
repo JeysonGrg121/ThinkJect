@@ -17,4 +17,10 @@ public partial class View_Home_Thinkject : System.Web.UI.Page
         //Dirigir a logueo
         Response.Redirect("Login.aspx");
     }
+
+    protected void Bt_registro_login_Click(object sender, EventArgs e)
+    {
+        //Dirigir al registro del usuario
+        Response.Redirect("Registro_login.aspx");
+    }
 }

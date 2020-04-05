@@ -50,4 +50,9 @@ public partial class View_Login : System.Web.UI.Page
             //Session["id"] = null;
         }
     }
+
+    protected void IB_volver_home_login_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("Home_Thinkject.aspx");
+    }
 }

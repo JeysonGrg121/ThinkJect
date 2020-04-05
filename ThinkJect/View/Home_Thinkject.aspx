@@ -13,6 +13,7 @@
             Aqui va todo lo de la pagina de inicio, todas las personas lo pueden ver
         </div>
         <p>
+            <asp:Button ID="Bt_registro_login" runat="server" OnClick="Bt_registro_login_Click" Text="Registrarse" />
             <asp:Button ID="Bt_ingresar" runat="server" OnClick="Bt_ingresar_Click" Text="Login" />
         </p>
     </form>
