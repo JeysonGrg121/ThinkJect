@@ -74,14 +74,14 @@
             <div class="form-group">
                  <div class="col-sm-10">
                      <asp:Label ID="Lb_usuario" runat="server" Text="Usuario" CssClass="control-label col-sm-2"></asp:Label>
-                     <asp:TextBox ID="Tx_Usuario" runat="server" CssClass="auto-style3"></asp:TextBox>
+                     <asp:TextBox ID="Tx_Usuario" runat="server" CssClass="auto-style3"  placeholder="Introduce tu usuario"></asp:TextBox>
                  </div>
             </div>
              <%--password--%>
             <div class="form-group">
                  <div class="col-sm-10">
                      <asp:Label ID="Lb_clave" runat="server" Text="Clave" CssClass="control-label col-sm-2"></asp:Label>
-                     <asp:TextBox ID="Tx_Clave" runat="server" CssClass="auto-style4" TextMode="Password"></asp:TextBox>
+                     <asp:TextBox ID="Tx_Clave" runat="server" CssClass="auto-style4" TextMode="Password" placeholder="Introduce tu contraseña"></asp:TextBox>
                  </div>
             </div>
              <%--Boton iniciar--%>

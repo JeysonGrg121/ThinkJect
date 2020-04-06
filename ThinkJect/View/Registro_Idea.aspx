@@ -27,7 +27,7 @@
                 <asp:TextBox ID="Tb_asociacion" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RFV_asociacion" runat="server" ControlToValidate="Tb_asociacion" ErrorMessage="*" ForeColor="Red" ValidationGroup="GRFV_Resgitro"></asp:RequiredFieldValidator>
                 <br />
-                Categora:
+                Categoria:
                 <asp:DropDownList ID="DDL_Cateroria" runat="server" DataSourceID="ODS_categoria" DataTextField ="nombre_categoria" DataValueField="id">
                 </asp:DropDownList>
                 <asp:ObjectDataSource ID="ODS_categoria" runat="server" SelectMethod="obtenerCategoria" TypeName="DAO"></asp:ObjectDataSource>

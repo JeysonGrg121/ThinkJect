@@ -13,7 +13,11 @@ public partial class View_Registro_login : System.Web.UI.Page
 
     }
 
-    protected void Bt_resgistrar_Click(object sender, EventArgs e)
+  
+      //  Response.Redirect("Home_Thinkject.aspx");
+    
+
+    protected void Bt_registrar_usuario_Click(object sender, EventArgs e)
     {
         E_registro_login registro = new E_registro_login();
         registro.Nombre = Tb_nombre_usuario.Text;
@@ -21,15 +25,17 @@ public partial class View_Registro_login : System.Web.UI.Page
         registro.Username = Tb_username.Text;
         registro.Contrasena = Tb_contrasena.Text;
         registro.Correo = Tb_correo_usuario.Text;
-   
+
         DAO idea = new DAO();
         DataTable val;
         val = idea.Insertar_usuario(registro);
         ClientScriptManager cm = this.ClientScript;
         cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Acabas de quedar registrado satisfactoriamente.');</script>");
         limpiar_campos();   //Metodo de limpiar 
+
+        // Limpiamos los datos ingresados en las cajas de texto del registro de usuario
+     
     }
-    // Limpiamos los datos ingresados en las cajas de texto del registro de usuario
     private void limpiar_campos()
     {
         Tb_nombre_usuario.Text = "";
@@ -39,7 +45,8 @@ public partial class View_Registro_login : System.Web.UI.Page
         Tb_correo_usuario.Text = "";
     }
 
-    protected void IB_volver_home_Click(object sender, ImageClickEventArgs e)
+
+    protected void Ib_volver_home_Click(object sender, ImageClickEventArgs e)
     {
         Response.Redirect("Home_Thinkject.aspx");
     }
