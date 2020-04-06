@@ -46,7 +46,7 @@ public partial class View_Login : System.Web.UI.Page
         else
         {
             Lb_error.Visible = true;
-            Lb_error.Text = "error en los datos";
+            Lb_error.Text = "Error en los datos";
             //Session["id"] = null;
         }
     }
