@@ -181,6 +181,8 @@ public class DAO
             dataAdapter.SelectCommand.Parameters.Add("_asociacion", NpgsqlDbType.Text).Value = val.Asociacion;
             dataAdapter.SelectCommand.Parameters.Add("_correo", NpgsqlDbType.Text).Value = val.Correo;
             dataAdapter.SelectCommand.Parameters.Add("_id_administrador", NpgsqlDbType.Integer).Value = val.Id_administrador;
+            dataAdapter.SelectCommand.Parameters.Add("_nombre_proyecto", NpgsqlDbType.Text).Value = val.Nombre_proyecto;
+            dataAdapter.SelectCommand.Parameters.Add("_id_user", NpgsqlDbType.Integer).Value = val.Id_user;
 
             conection.Open();
             dataAdapter.Fill(validar);
@@ -260,5 +262,62 @@ public class DAO
         }
         return insertar;
     }
+    //obtener poryectos publicados del usuario
 
+    public DataTable obtener_proyectos_publicados(int id)
+    {
+        DataTable obtenercategoria = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["Postgres"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("proyecto.f_obtener_proyecto_pendientes_rol", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Integer).Value = id;
+
+            conection.Open();
+            dataAdapter.Fill(obtenercategoria);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return obtenercategoria;
+    }
+    //obtener todos los datos del proyecto del usuario logeado
+    public DataTable obtener_proyectos_publicados_user(int id, int id_data)
+    {
+        DataTable obtenercategoria = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["Postgres"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("proyecto.f_obtener_proyecto_vista_publicado", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Integer).Value = id;
+            dataAdapter.SelectCommand.Parameters.Add("_id_data", NpgsqlDbType.Integer).Value = id_data;
+
+            conection.Open();
+            dataAdapter.Fill(obtenercategoria);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return obtenercategoria;
+    }
 }

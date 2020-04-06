@@ -39,4 +39,9 @@ public partial class View_M_Usuariomaster : System.Web.UI.MasterPage
         Session["id"] = null;
         Response.Redirect("Login.aspx");
     }
+
+    protected void BT_regitro_beneficio_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Regitro_beneficio.aspx");
+    }
 }

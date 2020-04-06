@@ -27,6 +27,7 @@ public class E_AvalProyecto
     private string asociacion;
     private string correo;
     private double recolectado;
+    private int id_user;
 
     public string Nombre_proyecto { get => nombre_proyecto; set => nombre_proyecto = value; }
     public string Nombre_categoria { get => nombre_categoria; set => nombre_categoria = value; }
@@ -40,6 +41,7 @@ public class E_AvalProyecto
     public string Asociacion { get => asociacion; set => asociacion = value; }
     public string Correo { get => correo; set => correo = value; }
     public double Recolectado { get => recolectado; set => recolectado = value; }
+    public int Id_user { get => id_user; set => id_user = value; }
 }
 
    

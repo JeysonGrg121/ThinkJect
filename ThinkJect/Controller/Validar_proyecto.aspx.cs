@@ -8,8 +8,10 @@ using System.Web.UI.WebControls;
 
 public partial class View_Validar_proyecto : System.Web.UI.Page
 {
+    private int id_user;
     protected void Page_Load(object sender, EventArgs e)
     {
+        
         if (Session["id_producto"] == null)
         {
             Response.Redirect("Proyecto_pendiente.aspx");
@@ -29,6 +31,7 @@ public partial class View_Validar_proyecto : System.Web.UI.Page
             Lb_responsable.Text = buscar.Rows[0]["usuario"].ToString();
             Lb_Correo.Text = buscar.Rows[0]["correo"].ToString();
             Im_foto.ImageUrl = buscar.Rows[0]["foto"].ToString();
+            id_user = int.Parse(buscar.Rows[0]["id_user"].ToString());
         }
     }
 
@@ -51,7 +54,7 @@ public partial class View_Validar_proyecto : System.Web.UI.Page
     {
         double recolectado = 0;
         E_AvalProyecto validar = new E_AvalProyecto();
-        validar.Id_administrador = 2; //int.Parse(Session["user_id"].ToString());
+        validar.Id_administrador = int.Parse(Session["id"].ToString());
         validar.Image = Im_foto.ImageUrl;
         validar.Asociacion = Lb_asociacion.Text;
         validar.Correo = Lb_Correo.Text;
@@ -63,6 +66,7 @@ public partial class View_Validar_proyecto : System.Web.UI.Page
         validar.Nombre_usuario = Lb_responsable.Text;
         validar.Presupuesto = double.Parse(Lb_meta.Text);
         validar.Recolectado = recolectado;
+        validar.Id_user = id_user;
         DAO aprovar = new DAO();
         DataTable val = aprovar.insert_proyec(validar);
         string mensaje = Tb_mensaje.Text;
