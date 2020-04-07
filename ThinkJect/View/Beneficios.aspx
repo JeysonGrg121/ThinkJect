@@ -85,13 +85,36 @@
                     </tr>
                     <tr>
                         <td>
+                            <asp:Label ID="Lb_mensaje" runat="server" ForeColor="Red"></asp:Label>
+                            <br />
                             <asp:Button ID="Bt_añadir" runat="server" OnClick="Bt_añadir_Click" Text="Añadir" ValidationGroup="GV_Añadir" />
                         </td>
                     </tr>
                     <tr>
                         <td class="auto-style4">
-                            <asp:GridView ID="GV_lista" runat="server">
+                            <br />
+                            <asp:GridView ID="GV_lista" runat="server" AutoGenerateColumns="False">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Valor">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="Tb_valor_edit" runat="server" Text='<%# Bind("valor") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("valor") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Beneficio">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="Tb_benefico_edit" runat="server" Text='<%# Bind("descripcion") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("descripcion") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
                             </asp:GridView>
+                            <br />
+                            <asp:Button ID="Bt_registrar" runat="server" OnClick="Bt_registrar_Click" Text="Terminar" Visible="False" />
                         </td>
                     </tr>
                 </table>

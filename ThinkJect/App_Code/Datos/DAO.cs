@@ -320,4 +320,97 @@ public class DAO
         }
         return obtenercategoria;
     }
+
+    //registar beneficios
+
+    public DataTable registar_benefiso(int id, int id_proyecto, string Json)
+    {
+        DataTable obtenercategoria = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["Postgres"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("proyecto.f_insert_beneficos", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id_user", NpgsqlDbType.Integer).Value = id;
+            dataAdapter.SelectCommand.Parameters.Add("_id_proyecto", NpgsqlDbType.Integer).Value = id_proyecto;
+            dataAdapter.SelectCommand.Parameters.Add("_beneficios", NpgsqlDbType.Text).Value = Json;
+
+            conection.Open();
+            dataAdapter.Fill(obtenercategoria);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return obtenercategoria;
+    }
+    //obtener proyectos publicados
+
+    public DataTable obtener_proyectos_publicados_home_page(DateTime fecha)
+    {
+        DataTable obtenercategoria = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["Postgres"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("proyecto.f_obtener_proyecto_home_page", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_fecha", NpgsqlDbType.Date).Value = fecha;
+            
+
+            conection.Open();
+            dataAdapter.Fill(obtenercategoria);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return obtenercategoria;
+    }
+
+    // obtener toda inormacion del proyecto del home page
+
+    public DataTable proyectos_publicados_home_page(int id)
+    {
+        DataTable obtenercategoria = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["Postgres"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("proyecto.f_obtener_proyecto_informacion", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Integer).Value = id;
+
+
+            conection.Open();
+            dataAdapter.Fill(obtenercategoria);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return obtenercategoria;
+    }
 }

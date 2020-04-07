@@ -10,22 +10,29 @@ public class Beneficioscs
 {
     public Beneficioscs()
     {
-        //
-        // TODO: Agregar aquí la lógica del constructor
-        //
+        valor = string.Empty;
+        descripcion = string.Empty;
+    }
+    public Beneficioscs(string val, string desc)
+    {
+        this.valor = val;
+        this.descripcion = desc;
+
     }
 
     private string valor;
     private string descripcion;
 
-   public String Valor
-   {
-        get { return valor; }
-        set { valor = value; }
-   }
-    public String Descripcion
+    public string Valor
     {
-        get { return descripcion; }
-        set { descripcion = value; }
+        get ; 
+        set ; 
     }
+
+    public string Descripcion
+    {
+        get; 
+        set; 
+    } 
+
 }
