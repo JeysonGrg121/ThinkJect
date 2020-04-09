@@ -1,181 +1,91 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="~/Controller/Registro_login.aspx.cs" Inherits="View_Registro_login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/M_home.master" AutoEventWireup="true" CodeFile="~/Controller/Registro_login.aspx.cs" Inherits="View_Registro_login" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link href="../resources/css/estilo_registro_login.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
-    <title>Registro usuario</title>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
 
-    <style type="text/css">
-        .auto-style1 {
-            display: block;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #495057;
-            background-clip: padding-box;
-            border-radius: .25rem;
-            transition: none;
-            border: 1px solid #ced4da;
-            background-color: #fff;
-        }
-        .auto-style4 {
-            position: relative;
-            width: 118%;
-            -ms-flex: 0 0 83.333333%;
-            flex: 0 0 83.333333%;
-            max-width: 83.333333%;
-            left: 0px;
-            top: 0px;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        .auto-style5 {
-            position: relative;
-            width: 117%;
-            -ms-flex: 0 0 83.333333%;
-            flex: 0 0 83.333333%;
-            max-width: 83.333333%;
-            left: 0px;
-            top: 0px;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        .auto-style6 {
-            position: relative;
-            width: 116%;
-            -ms-flex: 0 0 83.333333%;
-            flex: 0 0 83.333333%;
-            max-width: 83.333333%;
-            left: 0px;
-            top: 0px;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        .auto-style7 {
-            position: relative;
-            -ms-flex: 0 0 83.333333%;
-            flex: 0 0 83.333333%;
-            max-width: 83.333333%;
-            left: 0px;
-            top: 0px;
-            width: 487px;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        .auto-style8 {
-            left: 0px;
-            top: 0px;
-            height: 67px;
-            margin-top: 49px;
-        }
-        .auto-style9 {
-            height: 60px;
-        }
-    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-</head>
-<body style="margin-bottom: 19px">
-   <div class="container well contenedor_registro" style="width: 74%; height: 521px; margin-top: 0%;">
-    <form runat="server" id="form1" class="form-horizontal">
- 
-            <div class="row">
-                 <div class="auto-style8">
-                     <h2 class="auto-style9">Registro de usuario</h2>
-                    
-                     <br />
-                     <br />
-                 </div>
-                <!-- Nombre del usuario-->
-                <div class="form-group col-md-10" style="left: 0px; top: 0px; height: 67px">
-                    <!-- Label nombre usuario -->
-                     
-                        <strong>
-                        <asp:Label ID="Lb_nombre_usuario" runat="server" CssClass="control-label col-sm-0" Text="Nombre: "></asp:Label>
-                        </strong>
-                      
-                    <!-- Textbox nombre usuario -->
-                      
-                            <asp:TextBox ID="Tb_nombre_usuario" CssClass="auto-style1" runat="server" TextMode="SingleLine" placeholder="Ingrese su nombre" Width="515px"></asp:TextBox>
-                          <asp:RequiredFieldValidator ID="RFV_nombre_usuario" runat="server" ControlToValidate="Tb_nombre_usuario" ErrorMessage="Hace falta ingresar el nombre" ForeColor="Red" ></asp:RequiredFieldValidator>
-                      
-                </div>
-                <!-- Apellido del usuario-->
-                <div class="form-group">
-                    <!-- Label apellido usuario -->
-                    <div class="auto-style5">
-                        <strong>
-                        <asp:Label ID="Lb_apellido_usuario" runat="server" CssClass="control-label col-sm-0" Text="Apellido: "></asp:Label>
-                        </strong>
-                    </div>
-                    <!-- Textbox apellido usuario-->
-                    <div class="auto-style4">
-                        <asp:TextBox ID="Tb_apellido_usuario" CssClass="auto-style1" runat="server" TextMode="SingleLine" placeholder="Ingrese su apellido" Width="509px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RFV_apellido_usuario" runat="server" ControlToValidate="Tb_apellido_usuario" ErrorMessage="Hace falta ingresar el apellido" ForeColor="Red" ></asp:RequiredFieldValidator>
-                    </div>
-
-                </div>
-                <!-- username del usuario-->
-                <div class="form-group">
-                    <!-- Label username -->
-                    <div class="auto-style5">
-                        <strong>
-                        <asp:Label ID="Lb_username" runat="server" CssClass="control-label col-sm-0" Text="Usuario: "></asp:Label>
-                        </strong>
-                    </div>
-                    <!-- Textbox username -->
-                    <div class="auto-style5">
-                        <asp:TextBox ID="Tb_username" CssClass="auto-style1" runat="server" TextMode="SingleLine" placeholder="Ingrese su nickname" Width="505px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RFV_username" runat="server" ControlToValidate="Tb_username" ErrorMessage="Hace falta ingresar el usuario" ForeColor="Red" ></asp:RequiredFieldValidator>
-                    </div>
-
-                </div>
-                <!-- contraseña del usuario-->
-                <div class="form-group">
-                    <!-- Label contraseña -->
-                    <div class="auto-style5">
-                        <strong>
-                        <asp:Label ID="Lb_contrasena" runat="server" CssClass="control-label col-sm-0" Text="Contraseña: "></asp:Label>
-                        </strong>
-                    </div>
-                    <!-- Textbox contraseña -->
-                    <div class="auto-style6">
-                        <asp:TextBox ID="Tb_contrasena" CssClass="auto-style1" runat="server" TextMode="Password" placeholder="Ingrese su contraseña" Width="502px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RFV_contrasena" runat="server" ControlToValidate="Tb_contrasena" ErrorMessage="Hace falta ingresar la contraseña" ForeColor="Red" ></asp:RequiredFieldValidator>
-                    </div>
-
-                </div>
-                <!-- correo del usuario-->
-                <div class="form-group">
-                        <!-- Label correo -->
-                        <div class="auto-style7">
-                            <strong>
-                            <asp:Label ID="Lb_correo_usuario" runat="server" CssClass="control-label col-sm-0" Text="Correo: "></asp:Label>
-                            </strong>
-                        </div>
-                        <!-- Textbox correo -->
-                    <div class="auto-style6">
-                        <asp:TextBox ID="Tb_correo_usuario" CssClass="auto-style1" runat="server" TextMode="SingleLine" placeholder="Ingrese su correo electronico" Width="501px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RFV_correo_usuario" runat="server" ControlToValidate="Tb_correo_usuario" ErrorMessage="Hace falta ingresar el correo electronico" ForeColor="Red" ></asp:RequiredFieldValidator>
-                    </div>
+    <div runat="server" id="modificar">
        
-                </div>
-                <!-- Boton de registro del usuario-->
-                <div class="form-group col-lg-6 offset-2">
-            
-                    <div>
-                        <asp:Button ID="Bt_registrar_usuario" CssClass="btn-danger form-control btn btn-primary" runat="server" Text="Guardar" OnClick="Bt_registrar_usuario_Click"/>
-                    </div>
 
+        <div class="container well formulario " style="height: 589px">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>Registro de Usuario</h2>
                 </div>
-                 
             </div>
-      
-    </form>
-   </div>
-   
-</body>
-</html>
+            <br />
+            <br />
+            <div class="form-horizontal">
+
+          
+                <%-- Nombre del usuario --%>
+                <div class="form-group">
+                    <asp:Label ID="Lb_nombre_usuario" runat="server" Text="Nombre:" CssClass="control-label col-sm-2"></asp:Label>
+                    <div class="col-sm-10">
+                        <asp:TextBox ID="Tb_nombre_usuario" runat="server" CssClass="form-control" placeholder="Introduce tu nombre"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Campo obligatorio" ForeColor="Red" Display="Dynamic" ControlToValidate="Tb_nombre_usuario"></asp:RequiredFieldValidator>
+                        
+                    </div>
+                </div>
+                <%-- Apellido del usuario --%>
+                <div class="form-group">
+                    <asp:Label ID="Lb_apellido_usuario" runat="server" Text="Apellido:" CssClass="control-label col-sm-2"></asp:Label>
+                    <div class="col-sm-10">
+                        <asp:TextBox ID="Tb_apellido_usuario" runat="server" CssClass="form-control" placeholder="Introduce tu apellido"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="Campo obligatorio" ForeColor="Red" Display="Dynamic" ControlToValidate="Tb_apellido_usuario"></asp:RequiredFieldValidator>
+                        
+                    </div>
+                </div>
+                <%-- Username del usuario --%>
+                <div class="form-group">
+                    <asp:Label ID="Lb_username" runat="server" Text="Usuario:" CssClass="control-label col-sm-2"></asp:Label>
+                    <div class="col-sm-10">
+                        <asp:TextBox ID="Tb_username" runat="server" CssClass="form-control" placeholder="Introduce tu usuario"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obligatorio" ForeColor="Red" Display="Dynamic" ControlToValidate="Tb_username"></asp:RequiredFieldValidator>
+                        
+                    </div>
+                </div>
+                <%-- Contraseña del usuario --%>
+                <div class="form-group">
+                    <asp:Label ID="Lb_contrasena" runat="server" Text="Contraseña:" CssClass="control-label col-sm-2"></asp:Label>
+                    <div class="col-sm-10">
+                        <asp:TextBox ID="Tb_contrasena" runat="server" CssClass="form-control" TextMode="Password" placeholder="Introduce tu contraseña"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo obligatorio" ForeColor="Red" Display="Dynamic" ControlToValidate="Tb_contrasena"></asp:RequiredFieldValidator>
+                        
+                    </div>
+                </div>
+                <%-- Correo del usuario --%>
+                <div class="form-group">
+                    <asp:Label ID="Lb_correo_usuario" runat="server" Text="Correo:" CssClass="control-label col-sm-2"></asp:Label>
+                    <div class="col-sm-10">
+                        <asp:TextBox ID="Tb_correo_usuario" runat="server" CssClass="form-control" placeholder="Introduce tu correo eléctronico"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo obligatorio" ForeColor="Red" Display="Dynamic" ControlToValidate="Tb_correo_usuario"></asp:RequiredFieldValidator>
+                        
+                    </div>
+                </div>
+
+                <%-- hasta aqui los campos de registro, pendiente hijo de tu puta madre :v --%>
+
+                <div>
+                    
+                    <div class="col-sm-10 offset-3 ">
+
+                        <div class="col-sm-3 "></div>
+                        <asp:Button ID="Bt_registrar_usuario" runat="server" Text="Guardar" CssClass="btn btn-success col-sm-6" OnClick="Bt_registrar_usuario_Click"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</asp:Content>
+
+
+
+
