@@ -49,6 +49,7 @@
                 <br />
                 <asp:Button ID="Bt_resgistrar" runat="server" OnClick="Bt_resgistrar_Click" Text="Enviar Solicitud" ValidationGroup="GRFV_Resgitro" />
             </td>
+              
         </tr>
     </table>
 </asp:Content>

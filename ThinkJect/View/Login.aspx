@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Login</title>
     <link href="../resources/css/estilo_login.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
     <style type="text/css">
         .auto-style3 {
             display: block;
@@ -58,18 +58,13 @@
             
 <div class="container well contenedor_login"> 
      <form runat="server" class="form-horizontal">
+          
           <div class="row">
-          <div class="row">
-            <div class="col-xs-12 ">
-                <h2>
-                    <asp:ImageButton ID="IB_volver_home_login" runat="server" Height="50px" ImageUrl="~/Imagenes/home/boton-inicio.png" OnClick="IB_volver_home_login_Click" Width="67px" CssClass="form-control btn btn-primary" />
-                </h2>
+              <div class="col-xl-12">
+                 <h2>Iniciar Sesión</h2>
+              </div>
             </div>
-           </div>
-            <div class="col-xs-12 ">
-                <h2>Iniciar Sesión</h2>
-            </div>
-           </div>
+          
              <%--usuario--%>
             <div class="form-group">
                  <div class="col-sm-10">
