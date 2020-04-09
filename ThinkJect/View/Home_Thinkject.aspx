@@ -1,30 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="~/Controller/Home_Thinkject.aspx.cs" Inherits="View_Home_Thinkject" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/View/M_home.master" AutoEventWireup="true" CodeFile="~/Controller/Home_Thinkject.aspx.cs" Inherits="View_Home_Thinkject" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+ 
+    
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            Aqui va todo lo de la pagina de inicio, todas las personas lo pueden ver
-        </div>
-        <p>
-            <asp:Button ID="Bt_registro_login" runat="server" OnClick="Bt_registro_login_Click" Text="Registrarse" />
-            <asp:Button ID="Bt_ingresar" runat="server" OnClick="Bt_ingresar_Click" Text="Login" />
-        </p>
-        <table class="auto-style1">
+    <%-- Tabla de mostrar proyectos --%>
+    <table class="auto-style1">
             <tr>
                 <td class="auto-style2"><strong>Apoya Estos Proyectos</strong></td>
             </tr>
@@ -74,6 +58,7 @@
                 </td>
             </tr>
         </table>
-    </form>
-</body>
-</html>
+ 
+ 
+</asp:Content>
+

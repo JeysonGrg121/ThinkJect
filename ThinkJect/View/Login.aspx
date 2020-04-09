@@ -3,6 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="../resources/css/estilo_login.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+<style type="text/css">
+    .auto-style2 {
+        color: #FF0000;
+        font-size: medium;
+    }
+</style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -50,11 +56,17 @@
             <div class="form-group col-sm-10" >
                 <asp:Button ID="Bt_ingresar" runat="server" Text="Iniciar" OnClick="Iniciar_Click" CssClass="form-control btn btn-primary"/>
                 <h2>
-                    <asp:Label ID="Lb_error" runat="server" Text="Label" Visible="False"></asp:Label>
+                    <asp:Label ID="Lb_error" runat="server" Text="Label" Visible="False" CssClass="auto-style2"></asp:Label>
                 </h2>
             </div>
        </div>
     
 </div>
+    <div>
+        <br /><br />
+        <br /><br />
+        <br /><br />
+    </div>
+
 </asp:Content>
 

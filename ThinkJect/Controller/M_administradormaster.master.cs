@@ -27,13 +27,19 @@ public partial class View_M_administradormaster : System.Web.UI.MasterPage
         }
     }
 
-    protected void Bt_proyectos_Click(object sender, EventArgs e)
-    {
-        //accion del boton para redirigir a formulario de proyectos a publicar.
-        Response.Redirect("Proyecto_pendiente.aspx");
-    }
+    //protected void Bt_proyectos_Click(object sender, EventArgs e)
+    //{
+    //    //accion del boton para redirigir a formulario de proyectos a publicar.
+    //    Response.Redirect("Proyecto_pendiente.aspx");
+    //}
 
-    protected void LKB_cerrar_Click(object sender, EventArgs e)
+    //protected void LKB_cerrar_Click(object sender, EventArgs e)
+    //{
+    //    Session["id"] = null;
+    //    Response.Redirect("Login.aspx");
+    //}
+
+    protected void Lb_cerrar_admin_Click(object sender, EventArgs e)
     {
         Session["id"] = null;
         Response.Redirect("Login.aspx");

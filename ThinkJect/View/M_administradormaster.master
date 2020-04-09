@@ -10,6 +10,14 @@
     </asp:ContentPlaceHolder>
     <%-- Librerias de Css para los estilos de la master --%>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <style type="text/css">
+        .auto-style1 {
+            font-size: xx-large;
+        }
+        .auto-style2 {
+            font-size: large;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -18,8 +26,11 @@
                 <a class="navbar-brand" href="#"><span class="auto-style1">ThinkJect</span></a>
                 <a class="navbar-brand" href="#"><span class="auto-style1">ThinkJect</span></a>
                 <a class="navbar-brand" href="#"><span class="auto-style1">ThinkJect</span></a>
-                <div class="offset-8">
-                    <asp:LinkButton ID="LKB_cerrar" runat="server" OnClick="LKB_cerrar_Click">SALIR</asp:LinkButton>
+                <div class="offset-7">
+                    <strong>
+                    <%--<asp:LinkButton ID="LKB_cerrar" runat="server" OnClick="LKB_cerrar_Click" CssClass="auto-style2">SALIR</asp:LinkButton>--%>
+                    <asp:Button ID="Lb_cerrar_admin" runat="server" Text="Salir" OnClick="Lb_cerrar_admin_Click" class="btn btn-outline-warning"/>
+                    </strong>
                 </div>
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,6 +40,9 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="Home_Thinkject.aspx">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Perfil_administrador.aspx">Administrador</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Proyecto_pendiente.aspx">Proyectos pendientes</a>

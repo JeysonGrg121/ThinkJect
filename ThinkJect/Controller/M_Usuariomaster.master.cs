@@ -27,21 +27,27 @@ public partial class View_M_Usuariomaster : System.Web.UI.MasterPage
         }
     }
 
-    protected void Bt_registro_Click(object sender, EventArgs e)
-    {
-        // accion Boton redireccion a formulario de registrar para avalar proyectyo
+    //protected void Bt_registro_Click(object sender, EventArgs e)
+    //{
+    //    // accion Boton redireccion a formulario de registrar para avalar proyectyo
 
-        Response.Redirect("Registro_Idea.aspx");
-    }
+    //    Response.Redirect("Registro_Idea.aspx");
+    //}
 
-    protected void LKB_cerrar_Click(object sender, EventArgs e)
+    //protected void LKB_cerrar_Click(object sender, EventArgs e)
+    //{
+    //    Session["id"] = null;
+    //    Response.Redirect("Login.aspx");
+    //}
+
+    //protected void BT_regitro_beneficio_Click(object sender, EventArgs e)
+    //{
+    //    Response.Redirect("Regitro_beneficio.aspx");
+    //}
+
+    protected void Lb_cerrar_Click(object sender, EventArgs e)
     {
         Session["id"] = null;
         Response.Redirect("Login.aspx");
-    }
-
-    protected void BT_regitro_beneficio_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("Regitro_beneficio.aspx");
     }
 }

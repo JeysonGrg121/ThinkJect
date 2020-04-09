@@ -5,5 +5,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <p>
     Aqui va todo los datos del perfil de usuario</p>
+    
 </asp:Content>
 
