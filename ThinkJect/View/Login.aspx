@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/View/M_home.master" AutoEventWireup="true" CodeFile="~/Controller/Login.aspx.cs" Inherits="View_Login" %>
+﻿
+<%@ Page Language="C#" MasterPageFile="~/View/M_home.master" AutoEventWireup="true" CodeFile="~/Controller/Login.aspx.cs" Inherits="View_Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="../resources/css/estilo_login.css" rel="stylesheet" />
@@ -57,6 +58,7 @@
                 <asp:Button ID="Bt_ingresar" runat="server" Text="Iniciar" OnClick="Iniciar_Click" CssClass="form-control btn btn-primary"/>
                 <h2>
                     <asp:Label ID="Lb_error" runat="server" Text="Label" Visible="False" CssClass="auto-style2"></asp:Label>
+                    
                 </h2>
             </div>
        </div>

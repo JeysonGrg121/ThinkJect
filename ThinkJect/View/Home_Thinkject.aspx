@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/View/M_home.master" AutoEventWireup="true" CodeFile="~/Controller/Home_Thinkject.aspx.cs" Inherits="View_Home_Thinkject" %>
+﻿
+<%@ Page Language="C#" MasterPageFile="~/View/M_home.master" AutoEventWireup="true" CodeFile="~/Controller/Home_Thinkject.aspx.cs" Inherits="View_Home_Thinkject" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
  

@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Controller/M_home.master.cs" Inherits="View_M_home" %>
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Controller/M_home.master.cs" Inherits="View_M_home" %>
 
 <!DOCTYPE html>
 
@@ -60,6 +61,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     
  <!-- Footer OJOOOOOOOOOOOOOOOOOOOOOO -->
+
+    
     <br /><br />
     <footer class="page-footer font-small teal pt-4">
 
@@ -110,17 +113,18 @@
                 </div>
 
         </div>
-        <!-- Footer Text -->
+        <!-- Footer -->
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
             © 2020 Copyright:
-    <a href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        <a href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
         <!-- Copyright -->
 
     </footer>
-<!-- Footer -->
+
+<!-- Footeeeer -->
 </body>
    
 </html>
