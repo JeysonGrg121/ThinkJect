@@ -54,4 +54,10 @@ public partial class View_Apoyar_proyecto : System.Web.UI.Page
         Session["id_producto"] = null;
         Response.Redirect("Home_Thinkject.aspx");
     }
+
+    protected void GV_bene_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        PN_apoyar.Visible = true;
+
+    }
 }

@@ -21,6 +21,7 @@
         .auto-style3 {
             font-size: large;
         }
+    *,::after,::before{text-shadow:none!important;box-shadow:none!important}*,::after,::before{box-sizing:border-box}th{text-align:inherit}
     </style>
 </head>
 <body>
@@ -85,12 +86,77 @@
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="auto-style4" colspan="2"><strong>Mis beneficios</strong></td>
+                        <td class="auto-style4" colspan="2"><strong>Mis beneficios<br />
+                            </strong>
+                            <asp:GridView ID="GV_bene" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GV_bene_SelectedIndexChanged">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Valor">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="Tb_valor_edit" runat="server" Text='<%# Bind("valor") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Lb_valor" runat="server" Text='<%# Bind("valor") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Beneficio">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="Tb_benefico_edit" runat="server" Text='<%# Bind("descripcion") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Lb_bene" runat="server" Text='<%# Bind("descripcion") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:CommandField ButtonType="Button" HeaderText="Apoyar" SelectText="Apoyar" ShowSelectButton="True" />
+                                </Columns>
+                            </asp:GridView>
+                            </td>
                     </tr>
                     <tr>
                         <td class="auto-style2" colspan="2">
-                            <asp:GridView ID="GV_bene" runat="server">
-                            </asp:GridView>
+                            <asp:Panel ID="PN_apoyar" runat="server" Visible="False">
+                                <table class="auto-style1">
+                                    <tr>
+                                        <td colspan="3"><strong>COMPLETA LOS DATOS PARA APOYAR ESTE PROYECTO</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nombre:
+                                            <asp:TextBox ID="TB_nmbre" runat="server"></asp:TextBox>
+                                        </td>
+                                        <td>Apellido:<asp:TextBox ID="TB_apellido" runat="server"></asp:TextBox>
+                                        </td>
+                                        <td>Cuidad:
+                                            <asp:TextBox ID="TB_cuidad" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Valor:<asp:TextBox ID="Tb_valor" runat="server" ReadOnly="True"></asp:TextBox>
+                                        </td>
+                                        <td>Beneficio:<asp:TextBox ID="TB_bene" runat="server" ReadOnly="True"></asp:TextBox>
+                                        </td>
+                                        <td>Dirección:<asp:TextBox ID="TB_dire" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Button ID="BT_cancelar" runat="server" Text="Cancelar" />
+                                        </td>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <asp:Button ID="BT_apoyar" runat="server" Text="Apoyar" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </asp:Panel>
                         </td>
                     </tr>
                 </table>
