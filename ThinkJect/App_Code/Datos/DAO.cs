@@ -442,4 +442,95 @@ public class DAO
         }
         return obtenercategoria;
     }
+    //seleccionar datos de apoyo proyecto
+
+    public DataTable aopyo_datos(int id)
+    {
+        DataTable obtenercategoria = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["Postgres"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("proyecto.f_obtener_info_apoyo", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Integer).Value = id;
+
+
+            conection.Open();
+            dataAdapter.Fill(obtenercategoria);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return obtenercategoria;
+    }
+
+    //insertar datos en tabla apoyo
+
+    public DataTable apoyo_insert(int id_proyecto, string lista)
+    {
+        DataTable obtenercategoria = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["Postgres"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("proyecto.f_insert_apoyo", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id_proyecto", NpgsqlDbType.Integer).Value = id_proyecto;
+            dataAdapter.SelectCommand.Parameters.Add("_datos", NpgsqlDbType.Text).Value = lista;
+
+            conection.Open();
+            dataAdapter.Fill(obtenercategoria);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return obtenercategoria;
+    }
+    //actualizar datos apoyo
+    public DataTable apoyo_update(int id_proyecto, string lista)
+    {
+        DataTable obtenercategoria = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["Postgres"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("proyecto.f_actualizar_datos_apoyo", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Integer).Value = id_proyecto;
+            dataAdapter.SelectCommand.Parameters.Add("_datos", NpgsqlDbType.Text).Value = lista;
+
+            conection.Open();
+            dataAdapter.Fill(obtenercategoria);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return obtenercategoria;
+    }
+
 }

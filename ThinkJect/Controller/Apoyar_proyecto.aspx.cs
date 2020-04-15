@@ -10,6 +10,9 @@ using System.Web.UI.WebControls;
 public partial class View_Apoyar_proyecto : System.Web.UI.Page
 {
     static string beneficios;
+    static string datos;
+    protected static List<E_datos_apoyo> lista = new List<E_datos_apoyo>();
+    protected static List<string> lista2 = new List<string>();
     protected void Page_Load(object sender, EventArgs e)
     {        
         if (Session["id_producto"] == null)
@@ -58,6 +61,105 @@ public partial class View_Apoyar_proyecto : System.Web.UI.Page
     protected void GV_bene_SelectedIndexChanged(object sender, EventArgs e)
     {
         PN_apoyar.Visible = true;
+        Label valor;
+        Label bene;
+        GridViewRow gr = GV_bene.SelectedRow;
 
+        valor = (Label)gr.FindControl("Lb_valor");
+        bene = (Label)gr.FindControl("Lb_bene");
+        TB_bene.Text = bene.Text;
+        Tb_valor.Text = valor.Text;
+    }
+
+    protected void Bt_apoyosin_Click(object sender, EventArgs e)
+    {
+        TB_bene.ReadOnly = false;
+        Tb_valor.ReadOnly = false;
+        PN_apoyar.Visible = true;
+        TB_bene.Text = "No aplica";
+        TB_bene.ReadOnly = true;
+    }
+
+    protected void BT_cancelar_Click(object sender, EventArgs e)
+    {
+        PN_apoyar.Visible = false;
+        limpar();
+    }
+
+    public void limpar()
+    {
+        TB_nmbre.Text = "";
+        TB_apellido.Text = "";
+        Tb_valor.Text = "";
+        TB_cuidad.Text = "";
+        TB_bene.Text = "";
+        TB_dire.Text = "";
+        TB_correo.Text = "";
+
+    }
+
+    protected void BT_apoyar_Click(object sender, EventArgs e)
+    {
+        int id_proyecto = int.Parse(Session["id_producto"].ToString());
+        DAO obtener = new DAO();
+        DataTable obt = obtener.aopyo_datos(id_proyecto);
+        if (obt.Rows.Count > 0)
+        {
+            datos = obt.Rows[0]["apoyo"].ToString();
+            E_datos_apoyo datos1 = new E_datos_apoyo();
+            datos1.Nombre = TB_nmbre.Text;
+            datos1.Apellido = TB_apellido.Text;
+            datos1.Ciudad = TB_cuidad.Text;
+            datos1.Valor = Tb_valor.Text;
+            datos1.Beneficio = TB_bene.Text;
+            datos1.Direccion = TB_dire.Text;
+            datos1.Correo = TB_correo.Text;
+            lista.Add(datos1);
+            string correo = TB_correo.Text;
+            string mesaje = "Se le informa que ud puede hacer la transaccion a la siguiente cuenta de ahorros xxxxxxx.";
+            Correo_proyecto destino = new Correo_proyecto();
+            destino.enviarCorreo(correo,mesaje);
+
+            string json = JsonConvert.SerializeObject(lista);
+            lista2.Add(datos);
+            lista2.Add(json);
+            string json1 = JsonConvert.SerializeObject(lista2);
+            DAO insert = new DAO();
+            DataTable insertar = insert.apoyo_update(id_proyecto, json1);
+            limpar();
+            lista.Clear();
+            lista2.Clear();
+            PN_apoyar.Visible = false;
+            ClientScriptManager cm = this.ClientScript;
+            cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Solicitud Enviada Revise su correo.');</script>");
+            return;
+        }
+        else
+        {
+            E_datos_apoyo datos1 = new E_datos_apoyo();
+            datos1.Nombre = TB_nmbre.Text;
+            datos1.Apellido = TB_apellido.Text;
+            datos1.Ciudad = TB_cuidad.Text;
+            datos1.Valor = Tb_valor.Text;
+            datos1.Beneficio = TB_bene.Text;
+            datos1.Direccion = TB_dire.Text;
+            datos1.Correo = TB_correo.Text;
+            lista.Add(datos1);
+            string correo = TB_correo.Text;
+            string mesaje = "Se le informa que ud puede hacer la transaccion a la siguiente cuenta de ahorros xxxxxxx.";
+            Correo_proyecto destino = new Correo_proyecto();
+            destino.enviarCorreo(correo, mesaje);
+            string json = JsonConvert.SerializeObject(lista);
+            DAO insert = new DAO();
+            DataTable insertar = insert.apoyo_insert(id_proyecto, json);
+            limpar();
+            lista.Clear();
+            lista2.Clear();
+            PN_apoyar.Visible = false;
+            ClientScriptManager cm = this.ClientScript;
+            cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Solicitud Enviada Revise su correo.');</script>");
+            return;
+        }
+       
     }
 }

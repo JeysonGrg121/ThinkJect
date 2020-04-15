@@ -37,7 +37,7 @@
                     <td>
                 <table class="auto-style1">
                     <tr>
-                        <td class="auto-style2" rowspan="9">
+                        <td class="auto-style2" rowspan="10">
                             <asp:Image ID="IM_proyecto" runat="server" Width="40%" />
                         </td>
                         <td class="auto-style4" colspan="2"><strong>Proyecto</strong></td>
@@ -52,7 +52,7 @@
                             <asp:Label ID="Lb_correo" runat="server"></asp:Label>
                         </td>
                         <td><strong>Fecha Inicio: </strong>
-                            <asp:Label ID="Lb_fecha_in" runat="server"></asp:Label>
+                            <asp:Label ID="Lb_fecha_in" runat="server" ></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -84,6 +84,11 @@
                             <asp:Label ID="Lb_user" runat="server"></asp:Label>
                         </td>
                         <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2" colspan="2">
+                            <asp:Button ID="Bt_apoyosin" runat="server" OnClick="Bt_apoyosin_Click" Text="Apoyar sin beneficio" />
+                        </td>
                     </tr>
                     <tr>
                         <td class="auto-style4" colspan="2"><strong>Mis beneficios<br />
@@ -126,20 +131,34 @@
                                     <tr>
                                         <td>Nombre:
                                             <asp:TextBox ID="TB_nmbre" runat="server"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RFV_nombre" runat="server" ControlToValidate="TB_nmbre" ErrorMessage="*" ForeColor="Red" ValidationGroup="Gv_apoyar"></asp:RequiredFieldValidator>
                                         </td>
                                         <td>Apellido:<asp:TextBox ID="TB_apellido" runat="server"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RFV_apellido" runat="server" ControlToValidate="TB_apellido" ErrorMessage="*" ForeColor="Red" ValidationGroup="Gv_apoyar"></asp:RequiredFieldValidator>
                                         </td>
                                         <td>Cuidad:
                                             <asp:TextBox ID="TB_cuidad" runat="server"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RFV_ciudad" runat="server" ControlToValidate="TB_cuidad" ErrorMessage="*" ForeColor="Red" ValidationGroup="Gv_apoyar"></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Valor:<asp:TextBox ID="Tb_valor" runat="server" ReadOnly="True"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RFV_valor" runat="server" ControlToValidate="Tb_valor" ErrorMessage="*" ForeColor="Red" ValidationGroup="Gv_apoyar"></asp:RequiredFieldValidator>
                                         </td>
                                         <td>Beneficio:<asp:TextBox ID="TB_bene" runat="server" ReadOnly="True"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RFV_bene" runat="server" ControlToValidate="TB_bene" ErrorMessage="*" ForeColor="Red" ValidationGroup="Gv_apoyar"></asp:RequiredFieldValidator>
                                         </td>
                                         <td>Dirección:<asp:TextBox ID="TB_dire" runat="server"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RFV_dir" runat="server" ControlToValidate="TB_dire" ErrorMessage="*" ForeColor="Red" ValidationGroup="Gv_apoyar"></asp:RequiredFieldValidator>
                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Correo:
+                                            <asp:TextBox ID="TB_correo" runat="server" TextMode="Email"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RFV_correo" runat="server" ControlToValidate="TB_correo" ErrorMessage="*" ForeColor="Red" ValidationGroup="Gv_apoyar"></asp:RequiredFieldValidator>
+                                        </td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
                                     </tr>
                                     <tr>
                                         <td>&nbsp;</td>
@@ -148,11 +167,11 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Button ID="BT_cancelar" runat="server" Text="Cancelar" />
+                                            <asp:Button ID="BT_cancelar" runat="server" Text="Cancelar" OnClick="BT_cancelar_Click" />
                                         </td>
                                         <td>&nbsp;</td>
                                         <td>
-                                            <asp:Button ID="BT_apoyar" runat="server" Text="Apoyar" />
+                                            <asp:Button ID="BT_apoyar" runat="server" Text="Apoyar" ValidationGroup="Gv_apoyar" OnClick="BT_apoyar_Click" />
                                         </td>
                                     </tr>
                                 </table>

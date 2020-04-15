@@ -14,10 +14,7 @@
         .auto-style1 {
             font-size: xx-large;
         }
-        .auto-style2 {
-            font-size: large;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -45,7 +42,9 @@
                             <a class="nav-link" href="Perfil_administrador.aspx">Administrador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Proyecto_pendiente.aspx">Proyectos pendientes</a>
+                            <a class="nav-link" href="Proyecto_pendiente.aspx">Proyectos pendientes</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Validar_trans.aspx">Validar Transaccion</a>
                         </li>
                      
                         
