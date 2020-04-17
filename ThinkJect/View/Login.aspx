@@ -17,16 +17,13 @@
     <div class="container well contenedor_login" style="height: 288px; margin-top: 0%"> 
      
         <div>
-            <br />
-            <br />
-            <br />
-            <br />
+            <br /><br /><br />
+            <br /><br />
+            <br /><br />
         </div>
         <div class="row">
             <div>
-                <br />
-                <br />
-                <br />
+                <br /><br /><br /><br />
             </div>
          <div class="col-xl-10">
                 <h2>Iniciar Sesión</h2>
@@ -65,9 +62,9 @@
     
 </div>
     <div>
-        <br /><br />
-        <br /><br />
-        <br /><br />
+        <br /><br /><br />
+        <br /><br /><br />
+        <br /><br /><br /><br />
     </div>
 
 </asp:Content>

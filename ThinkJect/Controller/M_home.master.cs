@@ -11,4 +11,14 @@ public partial class View_M_home : System.Web.UI.MasterPage
     {
 
     }
+
+    protected void Lb_registrase_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Registro_login.aspx");
+    }
+
+    protected void Lb_registrase_login_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Login.aspx");
+    }
 }

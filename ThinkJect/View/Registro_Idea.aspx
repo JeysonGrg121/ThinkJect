@@ -5,7 +5,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-
+    <br /><br /><br />
     <%-- Nuevo registro idea --%>
         <div class="container well formulario " style="height: 589px">
             <div class="row">
@@ -161,10 +161,9 @@
               
         </tr>
     </table>--%>
-    <br /><br />
-    <br /><br />
-    <br /><br />
-    <br /><br />
-    <br /><br />
+    <br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br />
+
 </asp:Content>
 
