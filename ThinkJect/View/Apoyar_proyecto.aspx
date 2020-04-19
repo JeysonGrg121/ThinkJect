@@ -83,7 +83,9 @@
                         <td><strong>Usuario: </strong>
                             <asp:Label ID="Lb_user" runat="server"></asp:Label>
                         </td>
-                        <td>&nbsp;</td>
+                        <td>
+                            <asp:Label ID="lb_ver" runat="server"></asp:Label>
+                        </td>
                     </tr>
                     <tr>
                         <td class="auto-style2" colspan="2">

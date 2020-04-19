@@ -21,6 +21,7 @@ public class E_datos_apoyo
     private string beneficio;
     private string direccion;
     private string correo;
+    private string validado;
 
     public string Nombre { get; set; }
     public string Apellido { get ; set ; }
@@ -29,4 +30,5 @@ public class E_datos_apoyo
     public string Beneficio { get; set ; }
     public string Direccion { get ; set ; }
     public string Correo { get; set; }
+    public string Validado { get; set; }
 }

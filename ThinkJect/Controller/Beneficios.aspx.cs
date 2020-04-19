@@ -78,6 +78,7 @@ public partial class View_Beneficios : System.Web.UI.Page
             Bt_registrar.Visible = false;
             GV_lista.DataBind();
         }
+        lista.Clear();
 
     }
     

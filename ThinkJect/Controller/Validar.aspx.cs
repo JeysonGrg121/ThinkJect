@@ -31,7 +31,7 @@ public partial class View_Validar : System.Web.UI.Page
 
     public void deserealizar()
     {
-        var deficinicion = new { Nombre = "", Apellido = "", Ciudad = "", Valor = "", Beneficio = "", Direccion = "", Correo = "" };
+        var deficinicion = new { Nombre = "", Apellido = "", Ciudad = "", Valor = "", Beneficio = "", Direccion = "", Correo = "", Validado = "" };
         var lista = new[] { deficinicion };
         var beneficios1 = apoyos;
         var lis = JsonConvert.DeserializeAnonymousType(beneficios1, lista);

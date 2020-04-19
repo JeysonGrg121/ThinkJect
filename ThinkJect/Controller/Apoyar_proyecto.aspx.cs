@@ -12,7 +12,8 @@ public partial class View_Apoyar_proyecto : System.Web.UI.Page
     static string beneficios;
     static string datos;
     protected static List<E_datos_apoyo> lista = new List<E_datos_apoyo>();
-    protected static List<string> lista2 = new List<string>();
+    
+    
     protected void Page_Load(object sender, EventArgs e)
     {        
         if (Session["id_producto"] == null)
@@ -114,21 +115,21 @@ public partial class View_Apoyar_proyecto : System.Web.UI.Page
             datos1.Beneficio = TB_bene.Text;
             datos1.Direccion = TB_dire.Text;
             datos1.Correo = TB_correo.Text;
+            datos1.Validado = "No validado";
             lista.Add(datos1);
+
             string correo = TB_correo.Text;
             string mesaje = "Se le informa que ud puede hacer la transaccion a la siguiente cuenta de ahorros xxxxxxx.";
             Correo_proyecto destino = new Correo_proyecto();
             destino.enviarCorreo(correo,mesaje);
 
             string json = JsonConvert.SerializeObject(lista);
-            lista2.Add(datos);
-            lista2.Add(json);
-            string json1 = JsonConvert.SerializeObject(lista2);
+
+            string dt = data( datos,json);
             DAO insert = new DAO();
-            DataTable insertar = insert.apoyo_update(id_proyecto, json1);
+            DataTable insertar = insert.apoyo_update(id_proyecto, dt);
             limpar();
-            lista.Clear();
-            lista2.Clear();
+            lista.Clear();            
             PN_apoyar.Visible = false;
             ClientScriptManager cm = this.ClientScript;
             cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Solicitud Enviada Revise su correo.');</script>");
@@ -144,6 +145,7 @@ public partial class View_Apoyar_proyecto : System.Web.UI.Page
             datos1.Beneficio = TB_bene.Text;
             datos1.Direccion = TB_dire.Text;
             datos1.Correo = TB_correo.Text;
+            datos1.Validado = "No validado";
             lista.Add(datos1);
             string correo = TB_correo.Text;
             string mesaje = "Se le informa que ud puede hacer la transaccion a la siguiente cuenta de ahorros xxxxxxx.";
@@ -154,12 +156,23 @@ public partial class View_Apoyar_proyecto : System.Web.UI.Page
             DataTable insertar = insert.apoyo_insert(id_proyecto, json);
             limpar();
             lista.Clear();
-            lista2.Clear();
+            
             PN_apoyar.Visible = false;
             ClientScriptManager cm = this.ClientScript;
             cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Solicitud Enviada Revise su correo.');</script>");
             return;
         }
-       
+        
     }
+
+    public string data (string datos, string json)
+    {
+        datos = datos.Replace('[', '¡');
+        json = json.Replace('[', ' ');
+        string data = datos.Replace(']', ' ') + "," + json.Replace(']', '!');
+        data = data.Replace('¡', '[');
+        data = data.Replace('!', ']');
+        return data;
+    }
+    
 }
