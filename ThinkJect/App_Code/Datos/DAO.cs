@@ -532,5 +532,33 @@ public class DAO
         }
         return obtenercategoria;
     }
+    //update de apoyo validado por administrador.
+    public DataTable update(int id_proyecto, double valor)
+    {
+        DataTable obtenercategoria = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["Postgres"].ConnectionString);
 
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("proyecto.f_actualizar_pago", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Integer).Value = id_proyecto;
+            dataAdapter.SelectCommand.Parameters.Add("_valor", NpgsqlDbType.Double).Value = valor;
+
+            conection.Open();
+            dataAdapter.Fill(obtenercategoria);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return obtenercategoria;
+    }
 }
