@@ -1,0 +1,59 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Controller/M_home.master.cs" Inherits="View_M_home" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <style type="text/css">
+
+        .auto-style2 {
+            font-size: medium;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+ <%-- ----------------------------------------------------- --%>
+        <header>
+            <nav class="navbar navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="#"><span>ThinkJect</span></a>
+                <img src="../../Imagenes/logo/logo1.png"" alt="ThinkJecj" width="60px " />
+                
+            </nav>
+            <%--<br /><br /><br /><br /><br />--%>
+        </header>
+        <%-- ----------------------------------------------------- --%>
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+    <br /><br /><br />
+    
+    <!-- FOOTER -->
+    <br /><br /><br /><br />
+  <footer class="container border">
+    <%--  <p>Visita nuestras redes sociales </p>--%>
+      <div>
+      </div>
+       <div class="offset-4">
+              <p>© 2020 ThinkJectCompany <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+          </div>
+  </footer>
+    <!-- Footeeeer -->
+
+</body>
+   
+</html>

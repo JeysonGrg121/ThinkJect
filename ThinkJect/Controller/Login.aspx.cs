@@ -32,7 +32,7 @@ public partial class View_Login : System.Web.UI.Page
 
             if (int.Parse(Session["rol"].ToString()) == 1)
             {
-                //rediereccion al perfin surperadministrador
+                //rediereccion al perfil surperadministrador
 
             }else if (int.Parse(Session["rol"].ToString()) == 2)
             {

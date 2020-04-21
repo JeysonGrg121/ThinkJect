@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/M_home.master" AutoEventWireup="true" CodeFile="~/Controller/Home_Thinkject.aspx.cs" Inherits="View_Home_Thinkject" %>
+﻿<%@ Page Title="Inicio" Language="C#" MasterPageFile="~/View/M_home.master" AutoEventWireup="true" CodeFile="~/Controller/Home_Thinkject.aspx.cs" Inherits="View_Home_Thinkject" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <%--librerias--%>
@@ -137,22 +137,27 @@
                   <asp:SessionParameter DefaultValue="No Hay proyectos Actualmente" Name="fecha" SessionField="fecha_actual" Type="DateTime" />
               </SelectParameters>
           </asp:ObjectDataSource>
-          <asp:DataList ID="DL_proyectos" runat="server" DataSourceID="OBS_home_proyectos" RepeatColumns="5" RepeatDirection="Horizontal" OnItemCommand="DL_proyectos_ItemCommand">
+          <asp:DataList ID="DL_proyectos" runat="server" DataSourceID="OBS_home_proyectos" RepeatColumns="4" RepeatDirection="Horizontal" OnItemCommand="DL_proyectos_ItemCommand">
               <FooterTemplate>
                   <asp:label visible="<%#bool.Parse((DL_proyectos.Items.Count == 0).ToString())%>" xmlns:asp="#unknown"
                       runat="server" id="lblNoRecord" text="No hay proyectos Publicados."></asp:label>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </FooterTemplate>
+              
               <ItemTemplate>
+                  
                   <asp:Image  ID="I_foto" runat="server" ImageUrl='<%# Eval("foto") %>' width="140" height="140" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"/>
                     
                 <h2><asp:Label ID="Lb_nombre" runat="server" Text='<%# Eval("nombre_proyecto") %>'></asp:Label></h2>
                   
                   <asp:Label ID="Lb_descripcion" runat="server" Text='<%# Eval("descrpcion") %>'></asp:Label>
+                
                       <p><asp:Button ID="LkB_detalles" runat="server" CommandArgument='<%# Eval("id") %>' CommandName="detalles" Text="Detalles>>" class="btn btn-secondary"></asp:Button></p>
-                  
+                 
                     
                </ItemTemplate>
             </asp:DataList>
+          
      </div><!-- /.col-lg-4 -->
     <!-- PRUEBAAAA FIN-->
 
@@ -164,8 +169,8 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">Aqui algun  titulo perchito. <span class="text-muted">segunda idea principal :v.</span></h2>
-        <p class="lead">aalv muchos texto aqui de alguna pendejada sdfghjkldfaskdkjashdkjahsdkjhakjdhjjsjsjsjasd asdhashdh asjdjasd asdjjasdjasjdajsjddsajdjasdjs,as dasdjasd.</p>
+        <h2 class="featurette-heading">Proyectos artisticos. <span class="text-muted">Importantes en la sociedad.</span></h2>
+        <p class="lead">Sabes que el arte es fundamental para la cultura de una sociedad, y tal vez poder debatir este tema con alguien, pero necesitas tener unos argumentos más precisos de los que tienes, porque como artista las ideas que ves son más sensibles y sentimentales que precisas.</p>
       </div>
       <div class="col-md-5">
         <img class="featurette-image img-fluid mx-auto" src="../Imagenes/home/4.jpg" alt="Generic placeholder image"> 
@@ -176,8 +181,8 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Aqui algun  titulo perchito.<span class="text-muted">segunda idea principal :v</span></h2>
-        <p class="lead">aalv muchos texto aqui de alguna pendejada sdfghjkldfaskdkjashdkjahsdkjhakjdhjjsjsjsjasd asdhashdh asjdjasd asdjjasdjasjdajsjddsajdjasdjs,as dasdjasd.</p>
+        <h2 class="featurette-heading">Proyecto científico.<span class="text-muted">Generacion de un metodo cientifico</span></h2>
+        <p class="lead">Queremos que se desarrolle una organización de pautas para la producción de conocimientos de tipo científico. Cuando un especialista en una determinada ciencia planea desarrollar una investigación, genera un proyecto científico.</p>
       </div>
       <div class="col-md-5 order-md-1">
         <img class="featurette-image img-fluid mx-auto" src="../Imagenes/home/2.jpg" alt="Generic placeholder image"> 
@@ -188,10 +193,10 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-          <br /><br />
-        <h2 class="featurette-heading">Aqui algun  titulo perchito.<span class="text-muted">segunda idea principal :v</span></h2>
-        <p class="lead">aalv muchos texto aqui de alguna pendejada sdfghjkldfaskdkjashdkjahsdkjhakjdhjjsjsjsjasd asdhashdh asjdjasd asdjjasdjasjdajsjddsajdjasdjs,as dasdjasd.</p>
-        <p class="lead">aalv muchos texto aqui de alguna pendejada sdfghjkldfaskdkjashdkjahsdkjhakjdhjjsjsjsjasd asdhashdh asjdjasd asdjjasdjasjdajsjddsajdjasdjs,as dasdjasd.</p>
+          
+        <h2 class="featurette-heading">Haz de tu proyecto gastronómico un negocio redituable.<span class="text-muted">Conoce tu producto</span></h2>
+        <p class="lead">Para tomar una mejor decisión respecto al giro que le vas a dar a tu negocio, es necesario que conozcas muy bien tu producto, el margen de ganancia, los costos y el mercado al que te diriges. No inviertas si no conoces lo que estás vendiendo, pues eso sólo provocará que lo ofertes mal y no obtengas las ganancias esperadas. También, asegúrate de que eso que vas a ofrecer sea lo que necesita o pide el mercado, en especial si es tu primer emprendimiento.</p>
+        <p class="lead">La constancia es la clave del éxito, no sólo para no rendirse y decaer por la falta de compromiso –y empezar a abaratar porque la fórmula no era la que esperabas, si no a la hora de servir la comida. Con esto nos referimos a: sirve siempre lo mismo para que el cliente sepa a lo que va, y no se lleve sorpresas por la variación en la sazón. Evita el “a veces me gusta, a veces no” en el comensal.</p>
       </div>
       <div class="col-md-5">
         <img class="featurette-image img-fluid mx-auto" src="../Imagenes/home/3.jpg" alt="Generic placeholder image"> 

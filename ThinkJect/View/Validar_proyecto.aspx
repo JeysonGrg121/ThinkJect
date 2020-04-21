@@ -14,10 +14,9 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <br /><br />
+    <h1>Validar proyecto</h1>
     <table class="auto-style1">
-        <tr>
-            <td class="auto-style2" colspan="2"><strong>Validar Proyecto</strong></td>
-        </tr>
         <tr>
             <td>
                 <table class="auto-style1">

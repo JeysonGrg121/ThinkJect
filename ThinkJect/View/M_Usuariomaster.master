@@ -27,9 +27,11 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#"><span class="auto-style1">ThinkJect</span></a>
-                <a class="navbar-brand" href="#"><span class="auto-style1">ThinkJect</span></a>
-                
+                <div class="offset-0">
+                      <img src="../../Imagenes/logo/logo1.png"" alt="ThinkJecj" width="50px " />
+                        <a class="navbar-brand" href="#"><span class="auto-style1">ThinkJect</span></a>
+                </div>
+                <a class="navbar-brand" href="#"><span class="auto-style1"></span></a>
                 <div class="offset-7">
                     <strong>
                     <%--<asp:LinkButton ID="LKB_cerrar" runat="server" OnClick="LKB_cerrar_Click" CssClass="auto-style2">SALIR</asp:LinkButton>--%>
@@ -55,12 +57,11 @@
                        
                         
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown link
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Más de nosotros
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="View_home/Como_funciona.aspx">Qué es Thinkject?</a>
+                                 <a class="dropdown-item" href="View_home/Creemos.aspx">Creemos en tu trabajo</a>
                             </div>
                         </li>
                     </ul>

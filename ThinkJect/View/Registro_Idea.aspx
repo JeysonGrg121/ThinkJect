@@ -10,7 +10,7 @@
         <div class="container well formulario " style="height: 589px">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2>Registro de la idea</h2>
+                    <h2>Registra tu proyecto</h2>
                 </div>
             </div>
             <br />
